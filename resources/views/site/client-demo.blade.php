@@ -16,7 +16,7 @@
 
     <header class="site-header" data-site-header>
         <div class="header-inner">
-            <a class="brand" href="{{ route('site.client-demo', ['locale' => $language->code]) }}" aria-label="{{ $t('client.home_aria', 'Kordis ana sayfa') }}">
+            <a class="brand" href="{{ route('site.home', ['locale' => $language->code]) }}" aria-label="{{ $t('client.home_aria', 'Kordis ana sayfa') }}">
                 <span class="brand-mark" aria-hidden="true">K</span>
                 <span>
                     <strong>Kordis</strong>
@@ -33,7 +33,7 @@
                 @foreach($menuPages as $menuPage)
                     @php $menuTranslation = $menuPage->translations->first(); @endphp
                     @if($menuTranslation)
-                        <a href="{{ $menuPage->slug === 'home' ? route('site.client-demo', ['locale' => $language->code]) : route('site.page', ['locale' => $language->code, 'slug' => $menuPage->slug]) }}">
+                        <a href="{{ $menuPage->slug === 'home' ? route('site.home', ['locale' => $language->code]) : route('site.page', ['locale' => $language->code, 'slug' => $menuPage->slug]) }}">
                             {{ $menuTranslation->menu_title }}
                         </a>
                     @endif
@@ -45,7 +45,7 @@
                     <a class="language-option {{ $availableLanguage->id === $language->id ? 'is-active' : '' }}"
                        data-language="{{ $availableLanguage->code }}"
                        aria-pressed="{{ $availableLanguage->id === $language->id ? 'true' : 'false' }}"
-                       href="{{ route('site.client-demo', ['locale' => $availableLanguage->code]) }}">
+                       href="{{ route('site.home', ['locale' => $availableLanguage->code]) }}">
                         <span class="language-dot {{ $availableLanguage->code === 'tr' ? 'tr' : 'en' }}" aria-hidden="true"></span>
                         {{ strtoupper($availableLanguage->code) }}
                     </a>
@@ -228,7 +228,7 @@
 
     <footer class="site-footer">
         <div class="section-inner footer-inner">
-            <a class="brand footer-brand" href="{{ route('site.client-demo', ['locale' => $language->code]) }}" aria-label="{{ $t('client.home_aria', 'Kordis ana sayfa') }}">
+            <a class="brand footer-brand" href="{{ route('site.home', ['locale' => $language->code]) }}" aria-label="{{ $t('client.home_aria', 'Kordis ana sayfa') }}">
                 <span class="brand-mark" aria-hidden="true">K</span>
                 <span>
                     <strong>Kordis</strong>

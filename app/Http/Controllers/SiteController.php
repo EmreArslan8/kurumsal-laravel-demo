@@ -15,7 +15,7 @@ class SiteController extends Controller
 {
     public function home(string $locale = 'tr'): View
     {
-        return $this->renderPage($locale, 'home');
+        return $this->clientDemo($locale);
     }
 
     public function page(string $locale, string $slug): View|RedirectResponse

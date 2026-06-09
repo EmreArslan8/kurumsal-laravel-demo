@@ -23,7 +23,9 @@ class ExampleTest extends TestCase
 
         $this->get('/tr')
             ->assertOk()
-            ->assertSee('NovaKurumsal');
+            ->assertSee('Engineering Group')
+            ->assertSee('Endustriyel tesisler ve akilli altyapi')
+            ->assertSee('Gebze Otomasyonlu Depo Kampusu');
 
         $this->get('/tr/hazir-html-demo')
             ->assertOk()
