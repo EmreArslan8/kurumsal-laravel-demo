@@ -27,6 +27,14 @@ class ExampleTest extends TestCase
             ->assertSee('Endustriyel tesisler ve akilli altyapi')
             ->assertSee('Gebze Otomasyonlu Depo Kampusu');
 
+        $this->get('/en')
+            ->assertOk()
+            ->assertSee('Industrial facilities and smart infrastructure')
+            ->assertSee('A technical partner that plans')
+            ->assertSee('Gebze Automated Warehouse Campus')
+            ->assertDontSee('Endustriyel tesisler ve akilli altyapi')
+            ->assertDontSee('Ad Soyad');
+
         $this->get('/tr/hazir-html-demo')
             ->assertOk()
             ->assertSee('Engineering Group')

@@ -144,6 +144,11 @@
 
   languageButtons.forEach(function (button) {
     button.addEventListener("click", function () {
+      if (button.tagName.toLowerCase() === "a" && button.getAttribute("href")) {
+        closeNav();
+        return;
+      }
+
       setLanguage(button.getAttribute("data-language"));
     });
   });
